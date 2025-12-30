@@ -1,7 +1,0 @@
-tensorflow
-streamlit
-kagglehub
-numpy
-pillow
-scikit-learn
-matplotlib
