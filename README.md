@@ -1,35 +1,66 @@
-# 🧠 Brain Tumor Detection System (AI Powered)
+🧠 Brain Tumor Detection System using Deep Learning
 
-This project is a **Deep Learning-based Brain Tumor Detection System** using **MRI images**.  
-It uses **Transfer Learning** with a **pre-trained CNN** to classify brain MRI scans as **Tumor** or **No Tumor**.
+A deep learning–based medical imaging project that detects the presence of a brain tumor from MRI scans using a Convolutional Neural Network (CNN) with transfer learning (EfficientNet).
+The system is designed for educational and research purposes and demonstrates an end-to-end ML pipeline from data preprocessing to model training and inference.
 
----
+📌 Project Overview
 
-## 🔹 Features
+Brain tumors are life-threatening and require early diagnosis. This project aims to assist in automated brain tumor detection by classifying MRI images into:
 
-- Upload a brain MRI image
-- Detect whether a tumor is present
-- Display **confidence score**
-- Fast and accurate predictions
-- Easy-to-use **Gradio interface**
+Tumor (Yes)
 
----
+No Tumor (No)
 
-## 🔹 Technologies Used
+The model leverages EfficientNetB0, a powerful pre-trained CNN architecture, to achieve high accuracy with limited training data.
 
-- **TensorFlow / Keras** – Deep Learning
-- **MobileNetV2** – Pre-trained CNN for Transfer Learning
-- **Gradio** – Interactive Web App
-- **Python** – Programming language
-- **NumPy, Pillow** – Image processing
+🚀 Features
 
----
-## 🔹 Model Details
+MRI image classification (Tumor / No Tumor)
 
-- **Base Model:** MobileNetV2 (pre-trained on ImageNet)
-- **Transfer Learning:** Base layers frozen
-- **Custom Layers:** GlobalAveragePooling2D + Dense layers for binary classification
-- **Activation:** Sigmoid (for Tumor / No Tumor)
-- **Saved Model:** `model/brain_tumor_model.keras`
+Transfer Learning using EfficientNetB0
 
-**Accuracy Achieved:** ~95% on validation data (may vary slightly based on dataset split)
+Data augmentation for better generalization
+
+Fine-tuning of deep layers
+
+Binary classification with confidence scores
+
+Ready for deployment (Streamlit / Gradio compatible)
+
+🧠 Model Architecture
+
+Base Model: EfficientNetB0 (ImageNet weights)
+
+Custom Layers:
+
+Global Average Pooling
+
+Dense (ReLU)
+
+Dropout (regularization)
+
+Sigmoid output layer
+
+Loss Function: Binary Crossentropy
+
+Optimizer: Adam
+
+Input Size: 224 × 224 × 3
+
+📂 Dataset Structure
+brain_tumor_small/
+│
+├── train/
+│   ├── yes/
+│   └── no/
+│
+├── validation/
+│   ├── yes/
+│   └── no/
+│
+└── test/
+    ├── yes/
+    └── no/
+
+
+Dataset consists of MRI images labeled as Tumor (yes) and No Tumor (no).
